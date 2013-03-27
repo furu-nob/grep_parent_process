@@ -24,7 +24,7 @@ while [ -n "$PARENTS_PID"  ]
 do
   for CHILD_PID in $PARENTS_PID
   do
-    PARENTS_PID=`ps axl | awk '{print $3,$4}'|grep "$CHILD_PID\$" |cut -d' ' -f1 `
+    PARENTS_PID=`ps --no-headers --ppid=$CHILD_PID | awk '{print $1}'`
     if [ -n "$PARENTS_PID" ]
     then
       for OUT_PID in $PARENTS_PID
