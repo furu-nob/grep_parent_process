@@ -17,7 +17,7 @@ then
 fi
 
 PARENTS_PID=$1
-echo $PARENTS_PID
+echo -n "$PARENTS_PID "
 
 
 while [ -n "$PARENTS_PID"  ]
@@ -29,7 +29,7 @@ do
     then
       for OUT_PID in $PARENTS_PID
       do
-        echo $OUT_PID
+        echo -n "$OUT_PID "
       done
     fi
   done
