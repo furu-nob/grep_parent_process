@@ -1,5 +1,21 @@
 #!/bin/sh
 
+function usage {
+  echo "****************"
+  echo "$0 usage"
+  echo "****************"
+  echo ""
+  echo "\$ $0 PARENTS_PID"
+  echo ""
+}
+
+
+if [ -e $1 ]
+then
+  usage
+  exit 0
+fi
+
 PARENTS_PID=$1
 echo $PARENTS_PID
 
